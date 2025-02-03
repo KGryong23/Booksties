@@ -1,0 +1,11 @@
+D:\Booksties\src\CommonLib\CommonLib.Messaging\bin\Debug\net9.0\CommonLib.Messaging.deps.json
+D:\Booksties\src\CommonLib\CommonLib.Messaging\bin\Debug\net9.0\CommonLib.Messaging.dll
+D:\Booksties\src\CommonLib\CommonLib.Messaging\bin\Debug\net9.0\CommonLib.Messaging.pdb
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\CommonLib.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\CommonLib.Messaging.AssemblyInfoInputs.cache
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\CommonLib.Messaging.AssemblyInfo.cs
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\CommonLib.Messaging.csproj.CoreCompileInputs.cache
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\CommonLib.Messaging.dll
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\refint\CommonLib.Messaging.dll
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\CommonLib.Messaging.pdb
+D:\Booksties\src\CommonLib\CommonLib.Messaging\obj\Debug\net9.0\ref\CommonLib.Messaging.dll

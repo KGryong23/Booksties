@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package inventory;
+
+option go_package = "internal/protos";
+
+service InventoryService {
+  rpc CheckStock (CheckStockRequest) returns (CheckStockResponse);
+}
+
+message CheckStockRequest {
+  repeated ProductQuantity products = 1;
+}
+
+message ProductQuantity {
+  string product_id = 1;
+  int32 quantity = 2;
+}
+
+message CheckStockResponse {
+  repeated string insufficient_stock_product_ids = 1;
+}  
+

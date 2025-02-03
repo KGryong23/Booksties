@@ -1,0 +1,486 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: '3.4'
+
+services:
+  identitydb:
+    image: mcr.microsoft.com/mssql/server
+    container_name: identitydb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Trung1232003
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_identitydata:/var/opt/mssql
+    networks:
+      custom:
+
+
+  catalogdb:
+    image: postgres:latest
+    container_name: catalogdb
+    environment:
+      - POSTGRES_USER=trung1
+      - POSTGRES_PASSWORD=trung1
+      - POSTGRES_DB=CatalogDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_catalogdata:/var/lib/postgresql/data/
+    networks:
+      custom:
+
+
+  orderdb:
+    image: postgres:latest
+    container_name: orderdb
+    environment:
+      - POSTGRES_USER=trung2
+      - POSTGRES_PASSWORD=trung2
+      - POSTGRES_DB=OrderDb
+    restart: always
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_orderdata:/var/lib/postgresql/data/
+    networks:
+      custom:
+
+
+  basketdb:
+    image: postgres:latest
+    container_name: basketdb
+    environment:
+      - POSTGRES_USER=trung3
+      - POSTGRES_PASSWORD=trung3
+      - POSTGRES_DB=BasketDb
+    restart: always
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_basketdata:/var/lib/postgresql/data/
+    networks:
+      custom:
+
+
+  inventorydb:
+    image: postgres:latest
+    container_name: inventorydb
+    environment:
+      - POSTGRES_USER=trung4
+      - POSTGRES_PASSWORD=trung4
+      - POSTGRES_DB=InventoryDb
+    restart: always
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_inventorydata:/var/lib/postgresql/data/
+    networks:
+      custom:
+
+  reviewdb:
+    image: postgres:latest
+    container_name: reviewdb
+    environment:
+      - POSTGRES_USER=trung5
+      - POSTGRES_PASSWORD=trung5
+      - POSTGRES_DB=ReviewDb
+    restart: always
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres_reviewdata:/var/lib/postgresql/data/
+    networks:
+      custom:
+  
+  auctiondb:
+    image: postgres:latest
+    container_name: auctiondb
+    environment:
+      - POSTGRES_USER=trung6
+      - POSTGRES_PASSWORD=trung6
+      - POSTGRES_DB=AuctionDb
+    restart: always
+    ports:
+      - "5437:5432"
+    volumes:
+      - postgres_auctiondata:/var/lib/postgresql/data/
+    networks:
+      custom:
+
+  biddingdb:
+    image: postgres:latest
+    container_name: biddingdb
+    environment:
+      - POSTGRES_USER=trung7
+      - POSTGRES_PASSWORD=trung7
+      - POSTGRES_DB=BiddingDb
+    restart: always
+    ports:
+      - "5438:5432"
+    volumes:
+      - postgres_biddingdata:/var/lib/postgresql/data/
+    networks:
+      custom:
+
+  messagebroker:
+    image: rabbitmq:management
+    container_name: messagebroker
+    hostname: auction-mq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      custom:
+
+
+  searchdb:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    container_name: searchdb
+    environment:
+      - "discovery.type=single-node"
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+      - "ES_JAVA_OPTS=-Xms128m -Xmx128m"
+    restart: always
+    ports:
+      - "9200:9200"
+    volumes:
+      - search_data:/usr/share/elasticsearch/data
+    networks:
+      custom:
+
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.0
+    environment:
+      - ELASTICSEARCH_HOSTS=http://searchdb:9200
+    restart: always
+    ports:
+      - "5601:5601"
+    depends_on:
+      - searchdb
+    networks:
+      custom:
+
+
+  identityservice:
+    image: ${DOCKER_REGISTRY-}identityservice
+    build:
+      context: .
+      dockerfile: src/Services/Identity/IdentityService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Database=Server=identitydb;Database=IdentityDb;User Id=sa;Password=Trung1232003;Encrypt=False;TrustServerCertificate=True
+      - MessageBroker__Host=amqp://auction-mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
+      - Kestrel__Endpoints__Grpc__Protocols=Http2
+      - Kestrel__Endpoints__Grpc__Url=http://+:50000
+      - Kestrel__Endpoints__WebApi__Protocols=Http1
+      - Kestrel__Endpoints__WebApi__Url=http://+:8080
+      - GrpcSettings__BidUrl=http://biddingservice:50004
+    restart: always
+    depends_on:
+      - identitydb
+    ports:
+      - "18080:8080"
+      - "50000:50000"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      custom:
+
+
+  catalogservice:
+    image: ${DOCKER_REGISTRY-}catalogservice
+    build:
+      context: ./src/Services/Catalog/CatalogService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - GRPC_PORT=50001
+      - DB_HOST=catalogdb
+      - DB_PORT=5432
+      - DB_DATABASE=CatalogDb
+      - DB_USERNAME=trung1
+      - DB_PASSWORD=trung1
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - catalogdb
+      - messagebroker
+    ports:
+      - "6001:8080"
+    networks:
+      custom:
+
+
+  searchservice1:
+    image: ${DOCKER_REGISTRY-}searchservice
+    build:
+      context: ./src/Services/Search/SearchService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - ELASTICSEARCH_URL=http://searchdb:9200
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - catalogservice
+      - messagebroker
+      - searchdb
+    ports:
+      - "6002:8080"
+    networks:
+      custom:
+
+  searchservice2:
+    image: ${DOCKER_REGISTRY-}searchservice
+    build:
+      context: ./src/Services/Search/SearchService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - ELASTICSEARCH_URL=http://searchdb:9200
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - catalogservice
+      - messagebroker
+      - searchdb
+    ports:
+      - "6000:8080"
+    networks:
+      custom:
+
+
+  orderservice:
+    image: ${DOCKER_REGISTRY-}orderservice
+    build:
+      context: ./src/Services/Order/OrderService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - GRPC_SERVER_HOST_CATALOG=catalogservice:50001
+      - GRPC_SERVER_HOST_INVENTORY=inventoryservice:50002
+      - DB_HOST=orderdb
+      - DB_PORT=5432
+      - DB_DATABASE=OrderDb
+      - DB_USERNAME=trung2
+      - DB_PASSWORD=trung2
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - orderdb
+      - messagebroker
+    ports:
+      - "6003:8080"
+    networks:
+      custom:
+
+
+  basketservice:
+    image: ${DOCKER_REGISTRY-}basketservice
+    build:
+      context: ./src/Services/Basket/BasketService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - GRPC_SERVER_HOST=catalogservice:50001
+      - DB_HOST=basketdb
+      - DB_PORT=5432
+      - DB_DATABASE=BasketDb
+      - DB_USERNAME=trung3
+      - DB_PASSWORD=trung3
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - basketdb
+      - messagebroker
+    ports:
+      - "6004:8080"
+    networks:
+      custom:
+  
+  inventoryservice:
+    image: ${DOCKER_REGISTRY-}inventoryservice
+    build:
+      context: ./src/Services/Inventory/InventoryService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - GRPC_PORT=50002
+      - DB_HOST=inventorydb
+      - DB_PORT=5432
+      - DB_DATABASE=InventoryDb
+      - DB_USERNAME=trung4
+      - DB_PASSWORD=trung4
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - inventorydb
+      - messagebroker
+    ports:
+      - "6005:8080"
+    networks:
+      custom:
+  
+  reviewservice:
+    image: ${DOCKER_REGISTRY-}reviewservice
+    build:
+      context: ./src/Services/Review/ReviewService
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - DB_HOST=reviewdb
+      - DB_PORT=5432
+      - DB_DATABASE=ReviewDb
+      - DB_USERNAME=trung5
+      - DB_PASSWORD=trung5
+      - RABBITMQ_URL=amqp://guest:guest@auction-mq:5672
+    restart: always
+    depends_on:
+      - reviewdb
+      - messagebroker
+    ports:
+      - "6006:8080"
+    networks:
+      custom:
+
+  auctionservice:
+    image: ${DOCKER_REGISTRY-}auctionservice
+    build:
+      context: .
+      dockerfile: src/Services/Auction/AuctionService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=auctiondb;User Id=trung6;Password=trung6;Database=AuctionDb
+      - MessageBroker__Host=amqp://auction-mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
+      - Kestrel__Endpoints__Grpc__Protocols=Http2
+      - Kestrel__Endpoints__Grpc__Url=http://+:50003
+      - Kestrel__Endpoints__WebApi__Protocols=Http1
+      - Kestrel__Endpoints__WebApi__Url=http://+:8080
+      - GrpcSettings__BidUrl=http://biddingservice:50004
+    restart: always
+    depends_on:
+      - auctiondb
+      - messagebroker
+    ports:
+      - "6007:8080"
+      - "50003:50003"
+    volumes:
+      - ./src/Services/Auction/AuctionService/Images:/app/Images 
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      custom:
+
+  biddingservice:
+    image: ${DOCKER_REGISTRY-}biddingservice
+    build:
+      context: .
+      dockerfile: src/Services/Bidding/BiddingService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=biddingdb;User Id=trung7;Password=trung7;Database=BiddingDb
+      - MessageBroker__Host=amqp://auction-mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
+      - Kestrel__Endpoints__Grpc__Protocols=Http2
+      - Kestrel__Endpoints__Grpc__Url=http://+:50004
+      - Kestrel__Endpoints__WebApi__Protocols=Http1
+      - Kestrel__Endpoints__WebApi__Url=http://+:8080
+      - GrpcSettings__AuctionUrl=http://auctionservice:50003
+      - GrpcSettings__IdentityUrl=http://identityservice:50000
+    restart: always
+    depends_on:
+      - biddingdb
+      - messagebroker
+    ports:
+      - "6008:8080"
+      - "50004:50004"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      custom:
+
+  notificationservice:
+    image: ${DOCKER_REGISTRY-}notificationservice
+    build:
+      context: .
+      dockerfile: src/Services/Notification/NotificationService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - MessageBroker__Host=amqp://auction-mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
+    restart: always
+    depends_on:
+      - messagebroker
+    ports:
+      - "6009:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      custom:
+
+  yarpapigateway:
+    image: ${DOCKER_REGISTRY-}yarpapigateway
+    build:
+      context: .
+      dockerfile: src/ApiGateways/YarpApiGateway/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    restart: always
+    depends_on:
+      - identityservice
+      - catalogservice
+      - searchservice1
+      - searchservice2
+      - orderservice
+      - basketservice
+      - inventoryservice
+      - reviewservice
+    ports:
+      - "49152:8080"
+      - "6060:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      custom:
+
+
+volumes:
+  sqlserver_identitydata:
+  postgres_catalogdata:
+  postgres_orderdata:
+  postgres_basketdata:
+  postgres_inventorydata:
+  postgres_reviewdata:
+  postgres_auctiondata:
+  postgres_biddingdata:
+  search_data:
+
+
+networks:
+  custom:
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16

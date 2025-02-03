@@ -1,0 +1,12 @@
+D:\Booksties\src\CommonLib\CommonLib\bin\Debug\net8.0\CommonLib.deps.json
+D:\Booksties\src\CommonLib\CommonLib\bin\Debug\net8.0\CommonLib.dll
+D:\Booksties\src\CommonLib\CommonLib\bin\Debug\net8.0\CommonLib.pdb
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.csproj.AssemblyReference.cache
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.AssemblyInfoInputs.cache
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.AssemblyInfo.cs
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.csproj.CoreCompileInputs.cache
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.dll
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\refint\CommonLib.dll
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\CommonLib.pdb
+D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net8.0\ref\CommonLib.dll

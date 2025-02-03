@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option csharp_namespace = "BiddingService";
+
+service GrpcBid {
+  rpc GetHighBid(GetHighBidRequest) returns (GrpcHighBidResponse);
+  rpc GetBids(GetBidsRequest) returns (GrpcBidsResponse);
+}
+
+message GetHighBidRequest {
+  string id = 1;
+}
+
+message GetBidsRequest {
+  string id = 1;
+}
+
+message GrpcBidsModel {
+  string bidder_id = 1;
+  string amount = 2;
+  string status = 3;
+}
+
+message GrpcBidsResponse {
+  repeated GrpcBidsModel bids = 1;
+}
+
+message GrpcHighBidModel {
+  string bidder_id = 1;
+  string bidder = 2;
+  string amount = 3;
+  string status = 4;
+}
+
+message GrpcHighBidResponse {
+  GrpcHighBidModel bid = 1;
+}

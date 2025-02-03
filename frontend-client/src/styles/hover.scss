@@ -1,0 +1,36 @@
+.hover-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: 0.5rem;
+    margin: 1.2rem 0 0 0.6rem;
+    position: relative; // Đảm bảo phần tử con nằm đúng vị trí
+  
+    .hover-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1; // Đặt trên hình tròn
+      transition: all 0.3s ease-in-out; // Thêm hiệu ứng mượt
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0); // Ẩn hình tròn
+        width: 2.5rem; // Kích thước hình tròn
+        height: 2.5rem;
+        background-color: rgba(0, 0, 0, 0.1); // Màu nền mờ
+        border-radius: 50%; // Tạo hình tròn
+        z-index: 0; // Đặt dưới biểu tượng
+        transition: transform 0.3s ease-in-out; // Hiệu ứng phóng to
+      }
+  
+      &:hover::before {
+        transform: translate(-50%, -50%) scale(1); // Phóng to hình tròn khi hover
+      }
+    }
+  }
+  

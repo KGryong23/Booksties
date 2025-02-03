@@ -1,0 +1,11 @@
+go 1.23.3
+
+use (
+	./src/Services/Basket/BasketService
+	./src/Services/Catalog/CatalogService
+	./src/Services/Inventory/InventoryService
+	./src/Services/Order/OrderService
+	./src/Services/Review/ReviewService
+	./src/Services/Search/SearchService
+	./src/Services/Test/TestService
+)

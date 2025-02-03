@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "66guT388FUFtQaeBTOhaGCKyWbH8CcYINJ/A/XJSwk8=",
+  "Source": "YarpApiGateway",
+  "BasePath": "_content/YarpApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

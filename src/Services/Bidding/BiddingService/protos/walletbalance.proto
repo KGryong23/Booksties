@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "IdentityService";
+
+service GrpcWalletBalance {
+  rpc GetWalletBalance (GetWalletBalanceRequest) 
+  returns (GrpcWalletBalanceResponse);
+}
+
+message GetWalletBalanceRequest {
+  string id = 1;
+}
+
+message GrpcWalletBalanceResponse {
+  string balance = 1;
+}
+
