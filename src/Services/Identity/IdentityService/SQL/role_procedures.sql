@@ -15,6 +15,7 @@ BEGIN
     END
 END;
 
+GO
 CREATE PROCEDURE UpdateRole
     @RoleId UNIQUEIDENTIFIER,
     @RoleName NVARCHAR(255)
@@ -42,6 +43,7 @@ BEGIN
     END
 END;
 
+GO
 CREATE PROCEDURE DeleteRole
     @RoleId UNIQUEIDENTIFIER
 AS
@@ -58,6 +60,7 @@ BEGIN
         PRINT 'Role ID does not exist.';
     END
 END;
+GO
 
 GO
 CREATE PROCEDURE AddPermissionsToRole

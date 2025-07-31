@@ -910,7 +910,7 @@
         },
         "runtime": {
           "CommonLib.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -918,7 +918,7 @@
       "CommonLib.Messaging/1.0.0": {
         "runtime": {
           "CommonLib.Messaging.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

@@ -10,3 +10,16 @@ D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.dll
 D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\refint\CommonLib.dll
 D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.pdb
 D:\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\ref\CommonLib.dll
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\bin\Debug\net9.0\CommonLib.deps.json
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\bin\Debug\net9.0\CommonLib.dll
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\bin\Debug\net9.0\CommonLib.pdb
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.csproj.AssemblyReference.cache
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.AssemblyInfoInputs.cache
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.AssemblyInfo.cs
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.csproj.CoreCompileInputs.cache
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.sourcelink.json
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.dll
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\refint\CommonLib.dll
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\CommonLib.pdb
+C:\Users\o00o\source\repos\Booksties\src\CommonLib\CommonLib\obj\Debug\net9.0\ref\CommonLib.dll

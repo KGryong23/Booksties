@@ -285,24 +285,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Trung Nguyen\\.nuget\\packages\\": {}
+    "C:\\Users\\o00o\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
+      "projectUniqueName": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
       "projectName": "CommonLib",
-      "projectPath": "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
-      "packagesPath": "C:\\Users\\Trung Nguyen\\.nuget\\packages\\",
-      "outputPath": "D:\\Booksties\\src\\CommonLib\\CommonLib\\obj\\",
+      "projectPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
+      "packagesPath": "C:\\Users\\o00o\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Trung Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\o00o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -321,7 +328,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -364,7 +371,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj": {}
+    "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj": {}
   },
   "projects": {
-    "D:\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj": {
+    "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj",
+        "projectUniqueName": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj",
         "projectName": "CommonLib.Messaging",
-        "projectPath": "D:\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj",
-        "packagesPath": "C:\\Users\\Trung Nguyen\\.nuget\\packages\\",
-        "outputPath": "D:\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\obj\\",
+        "projectPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj",
+        "packagesPath": "C:\\Users\\o00o\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Trung Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\o00o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -59,26 +65,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj": {
+    "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
+        "projectUniqueName": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
         "projectName": "CommonLib",
-        "projectPath": "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
-        "packagesPath": "C:\\Users\\Trung Nguyen\\.nuget\\packages\\",
-        "outputPath": "D:\\Booksties\\src\\CommonLib\\CommonLib\\obj\\",
+        "projectPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj",
+        "packagesPath": "C:\\Users\\o00o\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Trung Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\o00o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -97,7 +109,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -140,37 +152,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj": {
+    "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj",
+        "projectUniqueName": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj",
         "projectName": "BiddingService",
-        "projectPath": "D:\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj",
-        "packagesPath": "C:\\Users\\Trung Nguyen\\.nuget\\packages\\",
-        "outputPath": "D:\\Booksties\\src\\Services\\Bidding\\BiddingService\\obj\\",
+        "projectPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\Services\\Bidding\\BiddingService\\BiddingService.csproj",
+        "packagesPath": "C:\\Users\\o00o\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\Services\\Bidding\\BiddingService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Trung Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\o00o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj": {
-                "projectPath": "D:\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj"
+              "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj": {
+                "projectPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib.Messaging\\CommonLib.Messaging.csproj"
               },
-              "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj": {
-                "projectPath": "D:\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj"
+              "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj": {
+                "projectPath": "C:\\Users\\o00o\\source\\repos\\Booksties\\src\\CommonLib\\CommonLib\\CommonLib.csproj"
               }
             }
           }
@@ -185,7 +203,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -237,7 +255,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

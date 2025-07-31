@@ -75,32 +75,32 @@ CREATE TABLE product_genres (
 --     ('FFED7C2E-EAD8-49E6-8759-F367BC351E66','One decision - Kỹ năng ra quyết định sáng suốt', 'Mike Bayer', 'NXB Dân Trí', 1983, 215, '20x15 cm', 'Hardcover', 208800.00, 'Khi bạn quyết định đọc quyển sách kỹ năng này, bạn đang thực hiện một quyết định để sống chân thực, để là chính mình. Khi quyết định sống đúng bản chất, cuộc sống của bạn sẽ thay đổi toàn diện.', '708EDCC9-9395-4560-B064-21184DE00213.jpg', 1, TRUE ,'1ebc45a3-416c-4cf4-ba26-30ab305e9f37');
 
     
--- INSERT INTO genres (
---     id,name
--- ) VALUES 
---     ('8B36AF78-8953-4EE5-BAA9-B9F172439C37','Phát triển bản thân'),
+INSERT INTO genres (
+    id,name
+) VALUES 
+    ('8B36AF78-8953-4EE5-BAA9-B9F172439C37','Phát triển bản thân'),
 
---     ('AF42161B-FC4F-43E5-8A0D-E9EB734246AB','Trinh thám - Kinh dị'),
+    ('AF42161B-FC4F-43E5-8A0D-E9EB734246AB','Trinh thám - Kinh dị'),
 
---     ('4A5EBB11-31DC-4222-838A-43DFB2840C46','Tài chính cá nhân'),
+    ('4A5EBB11-31DC-4222-838A-43DFB2840C46','Tài chính cá nhân'),
 
---     ('E8D371A7-9F90-460D-8E5F-39EBE88523A1','Kinh doanh - Làm giàu'),
+    ('E8D371A7-9F90-460D-8E5F-39EBE88523A1','Kinh doanh - Làm giàu'),
 
---     ('FBEEDD4F-729C-430B-92F7-9E9B4C749504','Tư duy sáng tạo'),
+    ('FBEEDD4F-729C-430B-92F7-9E9B4C749504','Tư duy sáng tạo'),
 
---     ('37288CD2-3000-4CBF-A05A-996206EFE5A6','Học tập hướng nghiệp'),
+    ('37288CD2-3000-4CBF-A05A-996206EFE5A6','Học tập hướng nghiệp'),
 
---     ('09A562A1-C6A5-4368-90F1-DFBB27EFE161','Ngôn tình'),
+    ('09A562A1-C6A5-4368-90F1-DFBB27EFE161','Ngôn tình'),
 
---     ('27F41B25-95C8-4CC3-9F56-EEF2A747C27D','Marketing - Bán hàng'),
+    ('27F41B25-95C8-4CC3-9F56-EEF2A747C27D','Marketing - Bán hàng'),
 
---     ('9C2E30E2-CD6B-457D-AF46-8373A4E2BEFB','Quản trị - Lãnh đạo'),
+    ('9C2E30E2-CD6B-457D-AF46-8373A4E2BEFB','Quản trị - Lãnh đạo'),
 
---     ('13BF7318-119C-4F55-880D-87B38FE6D821','Tác phẩm kinh điển'),
+    ('13BF7318-119C-4F55-880D-87B38FE6D821','Tác phẩm kinh điển'),
 
---     ('0F0A1865-5F5F-4D77-A8D1-194168784C8E','Nghệ thuật sống'),
+    ('0F0A1865-5F5F-4D77-A8D1-194168784C8E','Nghệ thuật sống'),
 
---     ('16BDDB78-1FBC-4467-B8E9-E3AD689A9BF1','Tâm linh - Tôn giáo');
+    ('16BDDB78-1FBC-4467-B8E9-E3AD689A9BF1','Tâm linh - Tôn giáo');
     
 
 -- INSERT INTO product_genres (
